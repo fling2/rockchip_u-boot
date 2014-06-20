@@ -24,6 +24,17 @@
 
 include $(TOPDIR)/config.mk
 
+ifneq ($(OBJTREE),$(SRCTREE))
+$(shell mkdir -p $(obj)/armlinux)
+$(shell mkdir -p $(obj)/common)
+$(shell mkdir -p $(obj)/common/A8MMU)
+$(shell mkdir -p $(obj)/common/crc)
+$(shell mkdir -p $(obj)/common/emmc)
+$(shell mkdir -p $(obj)/common/rc4)
+$(shell mkdir -p $(obj)/common/rockusb)
+$(shell mkdir -p $(obj)/platform/rk30)
+endif
+
 LIB	= $(obj)librockchip.o
 
 #COBJS-y += armlinux/armlinux.o
