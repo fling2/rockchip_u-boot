@@ -34,11 +34,13 @@ int checkKey(uint32* boot_rockusb, uint32* boot_recovery, uint32* boot_fastboot)
         *boot_rockusb = 1;
 	    //printf("rockusb key is pressed\n");
 	}
+/*
 	if(GetPortState(&key_recovery))
 	{
         *boot_recovery = 1;
 	    //printf("recovery key is pressed\n");
 	}
+*/
 /*
 	if(GetPortState(&key_fastboot))
 	{
@@ -51,7 +53,6 @@ int checkKey(uint32* boot_rockusb, uint32* boot_recovery, uint32* boot_fastboot)
 
 void RockusbKeyInit(key_config *key)
 {
-/*
     key->type = KEY_AD;
     key->key.adc.index = 1;
     key->key.adc.keyValueLow = 0;
@@ -59,12 +60,13 @@ void RockusbKeyInit(key_config *key)
     key->key.adc.data = SARADC_BASE;
     key->key.adc.stas = SARADC_BASE+4;
     key->key.adc.ctrl = SARADC_BASE+8;
-*/
+/*
     key->type = KEY_GPIO;
     key->key.gpio.valid = 0;
     key->key.gpio.group = 0;
     key->key.gpio.index = 9;// gpio0B1
     setup_gpio(&key->key.gpio);
+*/
 }
 
 int power_hold() {
