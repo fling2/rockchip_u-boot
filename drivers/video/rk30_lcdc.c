@@ -603,3 +603,6 @@ int rk30_lcdc_init()
 	return 0;
 }
 
+void rk30_lcdc_standby(enable)
+{
+}
