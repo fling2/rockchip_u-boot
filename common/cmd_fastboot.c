@@ -1880,10 +1880,11 @@ void fbt_preboot(void)
 
 #ifdef CONFIG_ROCKCHIP
 #ifdef CONFIG_LCD
-    drv_lcd_init();   //move backlight enable to board_init_r, for don't show logo in rockusb                                         
+    //drv_lcd_init();   //move backlight enable to board_init_r, for don't show logo in rockusb                                         
 #endif
 #endif// CONFIG_ROCKCHIP
     
+/*
     //check charge mode when no key pressed.
     if(check_charge() || frt == FASTBOOT_REBOOT_CHARGE) {
         char *charge[] = { "charge" };
@@ -1892,8 +1893,9 @@ void fbt_preboot(void)
             frt = FASTBOOT_REBOOT_NONE;
         }
     }
+*/
 
-    rk_backlight_ctrl(48);
+    //rk_backlight_ctrl(48);
 
 	if (frt == FASTBOOT_REBOOT_RECOVERY) {
 		FBTDBG("\n%s: starting recovery img because of reboot flag\n",
